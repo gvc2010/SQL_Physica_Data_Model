@@ -38,9 +38,26 @@ CREATE TABLE Vinho (
 );
 ```
 
-## 3. Insira Dados nas Tabelas
+## 3. Insira Dados nas Tabelas - Apenas duas regiões para teste
 ```bash
-Utilize o INSERT TO
+-- Inserindo dados na tabela Regiao
+INSERT INTO Regiao (nomeRegiao, descricaoRegiao)
+VALUES 
+('Bordeaux', 'Famosa região vinícola na França, conhecida por vinhos tintos de alta qualidade.'),
+('Toscana', 'Região italiana conhecida por vinhos tradicionais como o Chianti e o Brunello di Montalcino.');
+
+-- Inserindo dados na tabela Vinicola
+INSERT INTO Vinicola (nomeVinicola, descricaoVinicola, foneVinicola, emailVinicola, codRegiao)
+VALUES 
+('Vinícola Château Margaux', 'Uma das mais prestigiadas vinícolas em Bordeaux, produz vinhos tintos clássicos.', '123456789', 'contato@margaux.com', 1),
+('Vinícola Antinori', 'Famosa vinícola italiana localizada na região da Toscana, produtora de vinhos de alta qualidade.', '987654321', 'info@antinori.it', 2);
+
+-- Inserindo dados na tabela Vinho
+INSERT INTO Vinho (nomeVinho, tipoVinho, anoVinho, descricaoVinho, codVinicola)
+VALUES 
+('Château Margaux 2015', 'Tinto', 2015, 'Vinho tinto elegante e refinado, com notas de frutas vermelhas e taninos suaves.', 1),
+('Tignanello 2016', 'Tinto', 2016, 'Um vinho tinto italiano renomado, com aromas complexos e sabor profundo.', 2);
+
 ```
 
 ## 4.Consulta SQL para listar vinhos com vinícolas e regiões:
